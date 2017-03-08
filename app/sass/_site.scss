@@ -87,8 +87,8 @@
     opacity: 0;
     visibility: hidden;
     position: relative;
-    margin-bottom: -58%;
-    padding-top: 30px;
+    margin-bottom: -40%;
+    padding-top: 0;
     color: $main-white-color;
     font-size: 18px;
     line-height: 25px;
@@ -268,7 +268,7 @@
     }
     &__hero-text {
       margin-bottom: -13%;
-      padding-top: 49px;
+      padding-top: 0;
       font-size: 36px;
       line-height: 52px;
       letter-spacing: -0.9px;
@@ -279,9 +279,6 @@
       }
 
       &.animation {
-        opacity: 1;
-        visibility: visible;
-        margin-bottom: 0;
         padding-top: 49px;
       }
     }

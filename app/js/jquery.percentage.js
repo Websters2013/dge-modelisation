@@ -35,9 +35,17 @@
         //private methods
         var _constructor = function () {
                 _percentage[0].percentage = _self;
+                _setHeight();
                 _onEvents();
                 __percentageText.text( _from );
                 _addCanvas();
+            },
+            _setHeight = function () {
+
+                _obj.css({
+                    'height': _window.height()
+                })
+
             },
             _onEvents = function () {
 
@@ -51,8 +59,8 @@
                     },
                     resize: function() {
 
+                        _setHeight();
                         _redDraw()
-
                     }
                 } );
 
