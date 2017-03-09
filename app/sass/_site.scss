@@ -32,7 +32,7 @@
   }
   &__footer-crafted {
     font-size: 1.4vh;
-    line-height: 1.95vh;
+    line-height: 1vh;
     color: #bbb;
     @include  main-font4();
 
@@ -297,8 +297,8 @@
   }
 
   .percentage {
-    width: 40vh;
-    height: 40vh;
+    width: 60.422vh;
+    height: 60.422vh;
 
     &__wrap {
       bottom: -38px;
@@ -313,7 +313,7 @@
     justify-content: space-between;
 
     &__item {
-      height: 100%;
+      height: 302px;
       width: 33.33%;
       padding-bottom: 7px;
       border-right: 1px solid $main-border-color;
@@ -336,12 +336,6 @@
 }
 @media (min-width: $tablet-landscape) {
 
-  //.site {
-  //
-  //  &__hero-text {
-  //    margin-bottom: -15vh;
-  //  }
-  //}
 }
 @media (min-width: $desktop) {
 
@@ -394,6 +388,7 @@
         box-shadow: 0 0 25px rgba( 0, 132, 200, 0 );
         content: '';
       }
+
       &:hover {
         background: $main-blue-color;
         color: $main-white-color;

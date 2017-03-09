@@ -21,7 +21,7 @@
             _propertiesWrap = $( '.properties' ),
             _checkable = false,
             __percentageText = _percentage.find( '.percentage__percent span' ),
-            _duration = 3000,
+            _duration = 2000,
             _canAnimate = true,
             _canDraw = true,
             _firstStep = true,
@@ -43,25 +43,9 @@
             },
             _setHeight = function () {
 
-                if (_window.width() > 768 ) {
-
-                    _obj.css({
-                        'height': _window.height()*0.75
-                    });
-                    _propertiesWrap.css({
-                        'height': _window.height()*0.25
-                    })
-
-                } else {
-
-                    _obj.css({
-                        'height': _window.height()
-                    });
-                    _propertiesWrap.css({
-                        'height': 'auto'
-                    })
-                }
-
+                _obj.css({
+                    'height': _window.height()
+                });
             },
             _onEvents = function () {
 
@@ -173,11 +157,6 @@
 
                             clearInterval( timer );
 
-                            setTimeout(function () {
-
-                                _btnDown.addClass( 'animation' )
-
-                            }, 2000)
                         }
                     }
 
@@ -196,6 +175,12 @@
                     }
 
                 }, stepTime );
+
+                setTimeout(function () {
+
+                    _btnDown.addClass( 'animation' )
+
+                }, 2500);
 
                 _canAnimate = false;
                 _canDraw = false;
