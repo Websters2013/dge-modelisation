@@ -18,9 +18,10 @@
             _heroText = _obj.find( '.site__hero-text' ),
             _btnDown = _obj.find( '.site__hero-down' ),
             _percentage = _obj.find( '.percentage' ),
+            _propertiesWrap = $( '.properties' ),
             _checkable = false,
             __percentageText = _percentage.find( '.percentage__percent span' ),
-            _duration = 4000,
+            _duration = 3000,
             _canAnimate = true,
             _canDraw = true,
             _firstStep = true,
@@ -43,7 +44,10 @@
             _setHeight = function () {
 
                 _obj.css({
-                    'height': _window.height()
+                    'height': _window.height()*0.75
+                });
+                _propertiesWrap.css({
+                    'height': _window.height()*0.25
                 })
 
             },
@@ -126,10 +130,10 @@
                     range = _number,
                     current = 0,
                     increment = _number > 0? 1 : -1,
-                    stepTime = Math.abs(Math.floor(_duration / range)),
+                    stepTime = Math.abs( Math.floor( _duration / range ) ),
                     timer,
                     pauseAnimation = true,
-                    randomInt = Math.floor(Math.random() * (65 - 10 + 1)) + 10;
+                    randomInt = Math.floor( Math.random() * ( 25 - 5 + 1 ) ) + 5;
 
                 if( progress > 1 ){
                     progress = 1;

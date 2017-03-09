@@ -31,8 +31,8 @@
     }
   }
   &__footer-crafted {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 1.8vh;
+    line-height: 1.95vh;
     color: #bbb;
     @include  main-font4();
 
@@ -66,6 +66,13 @@
     height: 100vh;
     padding: 7.6% 0 7.6%;
     text-align: center;
+    backface-visibility: hidden;
+
+    &:after {
+      @include absolutePosition();
+      background: rgba( 0,46,68, .85 );
+      content: '';
+    }
   }
   &__hero-video {
     @include absoluteCenter();
@@ -76,6 +83,7 @@
     @include blockCentered();
     position: relative;
     width: 110px;
+    backface-visibility: hidden;
 
     svg {
       display: block;
@@ -95,6 +103,7 @@
     letter-spacing: 0;
     -webkit-transition: padding 1.2s cubic-bezier(.165,.84,.44,1),margin 1.2s cubic-bezier(.165,.84,.44,1),opacity 1.2s cubic-bezier(.165,.84,.44,1);
     transition: padding 1.2s cubic-bezier(.165,.84,.44,1),margin 1.2s cubic-bezier(.165,.84,.44,1),opacity 1.2s cubic-bezier(.165,.84,.44,1),-webkit-transform 1.2s cubic-bezier(.165,.84,.44,1);
+    backface-visibility: hidden;
 
     strong {
       display: block;
@@ -113,9 +122,10 @@
   &__hero-down {
     opacity: 0;
     @include absoluteCenterX();
+    z-index: 2;
     bottom: 3.3%;
-    width: 7.79vh;
-    height: 7.79vh;
+    width: 6vh;
+    height: 6vh;
     padding: 0;
     background: none;
     border: none;
@@ -260,40 +270,42 @@
     }
     &__footer-info {
       margin-bottom: 92px;
-      font-size: 24px;
-      line-height: 28px;
+      font-size: 2.5vh;
+      line-height: 2.9vh;
     }
     &__hero-logo {
-      width: 220px;
+      width: 22vh;
     }
     &__hero-text {
-      margin-bottom: -13%;
+      //margin-bottom: -8%;
+      margin-bottom: -15vh;
       padding-top: 0;
-      font-size: 36px;
-      line-height: 52px;
+      font-size: 2.9vh;
+      line-height: 5vh;
       letter-spacing: -0.9px;
 
       strong {
-        font-size: 48px;
+        font-size: 4.9vh;
+        line-height: 5vh;
         letter-spacing: -1.3px;
       }
 
       &.animation {
-        padding-top: 49px;
+        padding-top: 3vh;
       }
     }
   }
 
   .percentage {
-    width: 60.422vh;
-    height: 60.422vh;
+    width: 40vh;
+    height: 40vh;
 
     &__wrap {
       bottom: -38px;
-      font-size: 12px;
+      font-size: 1.3vh;
     }
     &__percent {
-      font-size: 72px;
+      font-size: 6vh;
     }
   }
   .properties {
@@ -301,19 +313,19 @@
     justify-content: space-between;
 
     &__item {
-      height: 302px;
+      height: 100%;
       width: 33.33%;
       padding-bottom: 7px;
       border-right: 1px solid $main-border-color;
       border-bottom: none;
-      font-size: 24px;
+      font-size: 2.4vh;
 
       svg {
-        width: 93px;
+        width: 9.79vh;
 
         &.stabilite-icon {
           top: 9px;
-          width: 74px;
+          width: 7.79vh;
         }
       }
       &:last-child {
@@ -324,6 +336,12 @@
 }
 @media (min-width: $tablet-landscape) {
 
+  //.site {
+  //
+  //  &__hero-text {
+  //    margin-bottom: -15vh;
+  //  }
+  //}
 }
 @media (min-width: $desktop) {
 
@@ -347,16 +365,22 @@
       }
     }
     &__hero-down {
+      border-radius: 50%;
+      background: transparent;
 
       &:hover {
+        background: $main-white-color;
 
         svg {
 
-          path {
+          path.arrow {
             fill: $main-blue-color;
           }
         }
       }
+    }
+    &__hero-text {
+      margin-bottom: -12vh;
     }
   }
   .properties {
@@ -370,7 +394,6 @@
         box-shadow: 0 0 25px rgba( 0, 132, 200, 0 );
         content: '';
       }
-
       &:hover {
         background: $main-blue-color;
         color: $main-white-color;
