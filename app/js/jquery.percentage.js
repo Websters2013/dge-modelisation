@@ -43,12 +43,24 @@
             },
             _setHeight = function () {
 
-                _obj.css({
-                    'height': _window.height()*0.75
-                });
-                _propertiesWrap.css({
-                    'height': _window.height()*0.25
-                })
+                if (_window.width() > 768 ) {
+
+                    _obj.css({
+                        'height': _window.height()*0.75
+                    });
+                    _propertiesWrap.css({
+                        'height': _window.height()*0.25
+                    })
+
+                } else {
+
+                    _obj.css({
+                        'height': _window.height()
+                    });
+                    _propertiesWrap.css({
+                        'height': 'auto'
+                    })
+                }
 
             },
             _onEvents = function () {
