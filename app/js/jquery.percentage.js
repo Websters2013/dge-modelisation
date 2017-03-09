@@ -7,7 +7,6 @@
 
             new Animations ( $( this ) );
         } );
-
     } );
 
     var Animations = function ( obj ) {
